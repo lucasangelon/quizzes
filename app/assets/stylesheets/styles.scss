@@ -1,13 +1,15 @@
 /* General Styles */
 
-$central-orange: #FF8622;
+$central-orange-hex: #FF8622;
+$central-orange-rgb: 255, 134, 34; 
+$black: #333333;
 
 .quizzes-orange {
-    color: $central-orange;
+    color: $central-orange-hex; 
 }
 
 .back-orange {
-    background-color: $central-orange;
+    background-color: rgba(255, 134, 34, 0.9);
 }
 
 .align-center {
@@ -15,6 +17,11 @@ $central-orange: #FF8622;
 }
 
 #logo {
-    width: px;
+    width: 80px;
     height: 80px;
+}
+
+.link {
+    text-decoration: none;
+    color: $black;
 }
