@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  heading: 
+  user_id: 
+  type_id: 
+  unit_id: 
+  language_id: 
+  specific_id: 
+  correct_answer: 
+
+two:
+  heading: 
+  user_id: 
+  type_id: 
+  unit_id: 
+  language_id: 
+  specific_id: 
+  correct_answer: 
