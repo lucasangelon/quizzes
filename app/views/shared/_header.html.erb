@@ -1,7 +1,13 @@
-<header class="sticky back-orange">
+<header class="contain-to-grid sticky back-black margin short-top-padding">
     <div class="row">
         <div class="small-4 small-offset-4 columns end align-center">
             <%= link_to image_tag("https://www.facebook.com/images/fb_icon_325x325.png", id: "logo", alt: "Quizzes Logo"), root_path %>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="small-12 columns">
+            <p class="quizzes-orange"><%= Time.zone.now.to_formatted_s(:long) %></p>
         </div>
     </div>
 </header>

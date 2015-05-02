@@ -23,3 +23,8 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+  #In production default = database we are going to (SQLite 3)
+  # default = default url address.
+  # remember to add databaseName/username/password fields in 
+  # order to be able to access the database.

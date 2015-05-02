@@ -1,15 +1,21 @@
 /* General Styles */
 
-$central-orange-hex: #FF8622;
+$central-orange-hex: #FF8622; 
 $central-orange-rgb: 255, 134, 34; 
 $black: #333333;
+$grey: #CCCCCC;
+$white: #FFFFFF;
 
 .quizzes-orange {
-    color: $central-orange-hex; 
+    color: $central-orange-hex;
 }
 
 .back-orange {
     background-color: rgba(255, 134, 34, 0.9);
+}
+
+.back-black {
+    background-color: $black;
 }
 
 .align-center {
@@ -23,5 +29,27 @@ $black: #333333;
 
 .link {
     text-decoration: none;
-    color: $black;
+}
+
+.margin {
+    margin: 0px 0px 10px 0px;
+}
+
+/* Button Styles */
+
+#submit:hover {
+    background-color: $central-orange-hex;
+    color: $white;
+}
+
+/* Header Styles */
+
+.short-top-padding {
+    padding-top: 5px;
+}
+
+/* Footer Styles */
+
+footer .link:hover {
+    color: $central-orange-hex;
 }

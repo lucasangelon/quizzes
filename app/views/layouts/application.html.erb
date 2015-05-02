@@ -14,7 +14,14 @@
 
   <body>
     <%= render 'shared/header' %>
-
+    
+    <!-- Renders an alert on the page based on certain events -->
+    <% flash.each do |message_type, message| %>
+      <div data-alert class="alert-box <%= message_type %> radius">
+        <%= message %>
+      </div>
+    <% end %>
+    
     <%= yield %>
 
     <%= render 'shared/footer' %>

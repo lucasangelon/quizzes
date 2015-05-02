@@ -1,7 +1,7 @@
 class CreateCourses < ActiveRecord::Migration
   def change
     create_table :courses do |t|
-      t.String :name
+      t.string :name
 
       t.timestamps
     end

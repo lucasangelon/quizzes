@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # Using Foundation for responsive design.
-gem 'foundation-rails', '5.4.5'
+gem 'foundation-rails', '5.4.5', group: :development
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

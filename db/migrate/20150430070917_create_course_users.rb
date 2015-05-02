@@ -1,8 +1,8 @@
 class CreateCourseUsers < ActiveRecord::Migration
   def change
     create_table :course_users do |t|
-      t.Integer :user_id
-      t.Integer :course_id
+      t.integer :user_id
+      t.integer :course_id
 
       t.timestamps
     end

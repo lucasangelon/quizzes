@@ -11,6 +11,133 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150430072200) do
+
+  create_table "answers", force: true do |t|
+    t.string   "heading"
+    t.integer  "user_id"
+    t.integer  "type_id"
+    t.integer  "unit_id"
+    t.integer  "language_id"
+    t.integer  "specific_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cluster_units", force: true do |t|
+    t.integer  "unit_id"
+    t.integer  "cluster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clusters", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "course_clusters", force: true do |t|
+    t.integer  "cluster_id"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "course_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "question_answers", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.string   "heading"
+    t.integer  "user_id"
+    t.integer  "type_id"
+    t.integer  "unit_id"
+    t.integer  "language_id"
+    t.integer  "specific_id"
+    t.string   "correct_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quiz_questions", force: true do |t|
+    t.integer  "quiz_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quizzes", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "unit_id"
+    t.integer  "language_id"
+    t.integer  "specific_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specifics", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "units", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_quizzes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "quiz_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.string   "password"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
