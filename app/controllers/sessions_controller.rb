@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
     
+    # Skipping the log in requirement 
+    skip_before_filter :logged_in_user
+    
     def new
         
     end
@@ -13,15 +16,19 @@ class SessionsController < ApplicationController
             log_in user
             
             # Redirect the user to the home page and display an alert.
-            redirect_to home_path, success: "Welcome, #{user.first_name}!"
+            flash[:success] = "Welcome, #{user.first_name}!"
+            redirect_to home_path
         else
             
             # Displaying an error message and refreshing the page.
-            redirect_to root_path, alert: 'Invalid credentials, please try again.'
+            flash.now[:alert] = 'Invalid credentials, please try again.'
+            
+            render 'new'
         end
     end 
     
     def destroy
-        
+        log_out
+        redirect_to root_url
     end
 end

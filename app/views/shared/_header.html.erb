@@ -1,13 +1,38 @@
-<header class="contain-to-grid sticky back-black margin short-top-padding">
-    <div class="row">
-        <div class="small-4 small-offset-4 columns end align-center">
-            <%= link_to image_tag("https://www.facebook.com/images/fb_icon_325x325.png", id: "logo", alt: "Quizzes Logo"), root_path %>
-        </div>
-    </div>
+<div class="sticky">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">Quizzes</a></h1>
+            </li>
+            
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
     
-    <div class="row">
-        <div class="small-12 columns">
-            <p class="quizzes-orange"><%= Time.zone.now.to_formatted_s(:long) %></p>
-        </div>
-    </div>
-</header>
+    
+        <section class="top-bar-section">
+            <ul class="right">
+                <% if logged_in? %>
+                    <li>
+                        <%= link_to "Edit Profile", details_path %>
+                    </li>
+                    
+                    <li class="divider"></li>
+                    
+                    <li>
+                        <%= link_to "Quizzes Main Website", root_path %>
+                    </li>
+                    
+                    <li>
+                        <%= link_to "Logout", logout_path, method: :delete %>
+                    </li>
+                <% else %>
+                    <li>
+                        <%= link_to "Quizzes Main Website", root_path %>
+                    </li>
+                <% end %>
+            </ul>
+            
+            <p class="left short-padding quizzes-orange"><%= Time.zone.now.to_formatted_s(:long) %></p>
+        </section>
+    </nav>
+</div>

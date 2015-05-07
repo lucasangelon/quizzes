@@ -1,7 +1,8 @@
 class ApplicationPagesController < ApplicationController
-  def landing
-  end
-
+  
+  # Skipping the log in requirement 
+  #skip_before_filter :redirect_home
+    
   def home
   end
 
