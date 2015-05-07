@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="small-10 small-offset-1 columns end">
+        <h1 class="align-center quizzes-orange">Welcome to Quizzes!</h1>
+        
+        <% if !logged_in? %>
+            <%= form_for(:session, url: login_path) do |f| %>
+                <div class="row">
+                    <div class="small-3 medium-2 medium-offset-2 columns">
+                        <%= f.label :username, class: 'right inline' %>
+                    </div>
+                    
+                    <div class="small-9 medium-6 columns end">
+                        <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %> 
+                    </div>
+                </div>
+                 
+                <div class="row">
+                    <div class="small-3 medium-2 medium-offset-2 columns">
+                        <%= f.label :password, class: 'right inline' %>
+                    </div>
+                    
+                    <div class="small-9 medium-6 columns end"> 
+                        <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
+                        <%= f.submit "Log In", id: 'submit', class: 'button radius quizzes-orange back-black' %>
+                    </div>
+                </div>
+            <% end %>
+            
+            <div class="row">
+                <div class="small-10 small-offset-1 columns end">
+                    <p class="align-center">New user? <%= link_to "Sign up on the main website!", root_path %></p>
+                </div>
+            </div>
+        <% else %>
+            <div class="row">
+                <div class="small-10 small-offset-1 columns end align-center">
+                    <p class="align-center"><%= link_to "You are already logged in, click here to head to your homepage!", home_path %></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div> 
