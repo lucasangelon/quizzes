@@ -14,7 +14,4 @@ class ApplicationPagesController < ApplicationController
 
   def review
   end
-
-  def details
-  end
 end
