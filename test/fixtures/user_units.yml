@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rails: MyString
+  generate: MyString
+  model: MyString
+  user_unit: MyString
+  user_id: 1
+  unit_id: MyString
+
+two:
+  rails: MyString
+  generate: MyString
+  model: MyString
+  user_unit: MyString
+  user_id: 1
+  unit_id: MyString
