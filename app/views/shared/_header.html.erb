@@ -10,27 +10,34 @@
     
     
         <section class="top-bar-section">
-            <ul class="right">
                 <% if logged_in? %>
-                    <li>
-                        <%= link_to "Edit Profile", edit_user_path(current_user) %>
-                    </li>
-                    
-                    <li class="divider"></li>
-                    
-                    <li>
-                        <%= link_to "Quizzes Main Website", root_path %>
-                    </li>
-                    
-                    <li>
-                        <%= link_to "Logout", logout_path, method: :delete %>
-                    </li>
+                    <ul class="left">
+                        <li>
+                            <%= link_to "Edit Profile", edit_user_path(current_user) %>
+                        </li>
+                        
+                        <li class="divider"></li>
+                        
+                        <li>
+                            <%= link_to "Quizzes Main Website", root_path %>
+                        </li>
+                        
+                        <li>
+                            <%= link_to "Logout", logout_path, method: :delete %>
+                        </li>
+                    </ul>
+                    <ul class="right">
+                        <li>
+                            <%= %>
+                        </li>
+                    <ul>
                 <% else %>
-                    <li>
-                        <%= link_to "Quizzes Main Website", root_path %>
-                    </li>
+                    <ul class="left">
+                        <li>
+                            <%= link_to "Quizzes Main Website", root_path %>
+                        </li>
+                    </ul>
                 <% end %>
-            </ul>
             
             <p class="left short-padding quizzes-orange"><%= Time.zone.now.to_formatted_s(:long) %></p>
         </section>
