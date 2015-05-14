@@ -2,12 +2,17 @@
 
 $central-orange-hex: #FF8622; 
 $central-orange-rgb: 255, 134, 34; 
+$green-hex: #44C757;
 $black: #333333;
 $grey: #CCCCCC;
 $white: #FFFFFF;
 
 .quizzes-orange {
     color: $central-orange-hex;
+}
+
+.green {
+    color: $green-hex;
 }
 
 .back-orange {
@@ -35,6 +40,10 @@ $white: #FFFFFF;
     margin: 0px 0px 10px 0px;
 }
 
+.padding {
+    padding: 30px 0px 0px 0px;
+}
+
 /* Button Styles */
 
 #submit:hover {
@@ -52,4 +61,10 @@ $white: #FFFFFF;
 
 footer .link:hover {
     color: $central-orange-hex;
+}
+
+/* Homepage Styles */
+
+.base-ul ul {
+    list-style-type: none;
 }

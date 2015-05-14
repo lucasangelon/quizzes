@@ -1,42 +1,37 @@
-<div class="row">
+<div class="row padding">
     <div class="small-12 columns">
         <div class="row">
-            <div class="small-10 small-offset-1 medium-6 medium-offset-1 columns">
-                <ul class="side-nav">
-                    <li>
-                        <h4>My Courses</h4>
-                    </li>
-                    
-                    <li>
-                        <ul>
-                            <% @courseTitles.each do |c| %>
-                                <li>
-                                    <h5><%= c.name %></h5>
-                                </li>
+            <div class="small-10 small-offset-1 columns end">
+                <p><%= "User Information for: #{current_user.first_name} #{current_user.last_name}" %></p>
+                
+                <ul class="base-ul side-nav">
+                    <li><h4 class="quizzes-orange">Course Information</h4></li>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <ul>
+                                <% getCourses.each do |c| %>
                                 
-                                <li>
+                                <li class="back-black align-center"><p class="quizzes-orange"><%= c.name %></p></li>
+                                
+                                <li><h5 class="quizzes-orange">Clusters</h5></li>
                                     <ul>
-                                        <li></li>
+                                        <% getClusters(c.id).each do |cl| %>
+                                        
+                                        <li><%= cl.name %></li>
+                                        
+                                        <li><h5 class="green">Units</h5></li>
+                                            <ul>
+                                                <% getUnits(cl.id).each do |u| %>
+                                                    <li><%= u.name %></li>
+                                                <% end %>
+                                            </ul>
+                                        <% end %>
                                     </ul>
-                                </li>
-                            <% end %> 
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <h2>Clusters and Units</h2>
-                    </li>
-                    
-                    <li>
-                        <ul class="side-nav">
-                            
-                            <% @units.each do |u| %>
-                            
-                                <li><%= u.name %></li>
-                            
-                            <% end %>
-                        </ul>
-                    </li>
+                                <% end %> 
+                            </ul>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>
