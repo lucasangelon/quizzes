@@ -32,7 +32,11 @@
                 <% end %>
             </ul>
             
-            <p class="left short-padding quizzes-orange"><%= Time.zone.now.to_formatted_s(:long) %></p>
+            <ul class="left">
+                <li class="quizzes-orange">
+                    <%= Time.zone.now.to_formatted_s(:long) %>
+                </li>
+            </ul>
         </section>
     </nav>
 </div>
