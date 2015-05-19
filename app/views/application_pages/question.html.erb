@@ -1,2 +1,55 @@
 <h1>ApplicationPages#question</h1>
+
+
+
+    <ul>
+        <% getQuestions(1).each do |question| %>
+            <p> James does not suck </p> 
+            <% if question.type_id == 1 %> <!-- True Or False -->
+                
+                <p><%= question.content %></p>
+                
+                <% form_for(@answer) do |a| %>
+                
+                
+                    <%= radio_button_tag(:content, "true") %>
+                    <%= label_tag(:text_true, "True") %>
+                    <%= radio_button_tag(:content, "false") %>
+                    <%= label_tag(:text_false, "False") %>
+                
+                <% end %>
+                
+                <br />
+                
+            <% elsif question.type_id == 2 %> <!-- Radio Button (4 options, only 1 can be selected ) -->
+            
+                <p><%= question.content %></p>
+                
+                <% form_for(@answer) do |a| %>
+                
+                
+                    <%= radio_button_tag(:content, "true") %>
+                    <%= label_tag(:text_true, "True") %>
+                    <%= radio_button_tag(:content, "false") %>
+                    <%= label_tag(:text_false, "False") %>
+                    <%= radio_button_tag(:content, "true") %>
+                    <%= label_tag(:text_true, "True") %>
+                    <%= radio_button_tag(:content, "false") %>
+                    <%= label_tag(:text_false, "False") %>
+                
+                <% end %>
+            
+            <% elsif question.type_id == 3 %> <!-- Multile Answer (checkboxs) -->
+            
+            <% elsif question.type_id == 4 %> <!-- text answer -->
+            
+            <% elsif question.type_id == 5 %> <!-- Multiple text Answer -->
+            
+            <% end %>
+            <!-- Rest of if statements here -->
+            
+            
+            <br />
+        <% end %>
+    </ul>
 <p>Find me in app/views/application_pages/question.html.erb</p>

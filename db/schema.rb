@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514153208) do
-
-  create_table "answers", force: true do |t|
-    t.string   "heading"
-    t.integer  "user_id"
-    t.integer  "type_id"
-    t.integer  "unit_id"
-    t.integer  "language_id"
-    t.integer  "specific_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20150519072740) do
 
   create_table "cluster_units", force: true do |t|
     t.integer  "unit_id"
@@ -63,9 +52,9 @@ ActiveRecord::Schema.define(version: 20150514153208) do
     t.datetime "updated_at"
   end
 
-  create_table "question_answers", force: true do |t|
+  create_table "question_extras", force: true do |t|
+    t.string   "content"
     t.integer  "question_id"
-    t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -82,15 +71,9 @@ ActiveRecord::Schema.define(version: 20150514153208) do
     t.datetime "updated_at"
   end
 
-  create_table "quiz_questions", force: true do |t|
-    t.integer  "quiz_id"
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "quizzes", force: true do |t|
     t.string   "title"
+    t.datetime "due_date"
     t.integer  "user_id"
     t.integer  "unit_id"
     t.integer  "language_id"
@@ -119,6 +102,16 @@ ActiveRecord::Schema.define(version: 20150514153208) do
 
   create_table "units", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_quiz_answers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "user_quiz_id"
+    t.integer  "question_id"
+    t.integer  "question_extra_id"
+    t.integer  "answer_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
