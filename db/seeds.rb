@@ -10,6 +10,9 @@
 
 Role.create(name: 'Student')
 User.create(first_name: 'Lucas', last_name: 'Angelon', username: 'lucasa', password: 'test12', role_id: '1')
+Role.create(name: 'Lecturer')
+User.create((first_name: 'Lucas', last_name: 'Angelon', username: 'lucasa2', password: 'test12', role_id: '2'))
+
 
 Unit.create(name: 'ICAPRG502A Manage a project using software management tools')
 Unit.create(name: 'ICAICT403A Apply software development methodologies')
@@ -32,3 +35,11 @@ CourseCluster.create(cluster_id: 2, course_id: 2)
 CourseUser.create(user_id: 1, course_id: 1)
 CourseUser.create(user_id: 1, course_id: 2)
 
+Quiz.create(title: 'TEST 1', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:1,language_id:1,specific_id:1)
+Question.create(content:'This is a test True or false question', quiz_id:1,user_id:1,type_id:1,language_id:1,specific_id:1,correct_answer:'true')
+Question.create(content:'This is a "ABCD" question quiz',quiz_id:1,user_id:1,type_id:1,language_id:1,specific_id:1,correct_answer:'1')
+
+QuestionExtra.create(content: 'Test Answer Number 1', question_id:2)
+QuestionExtra.create(content: 'Test Answer Number 2', question_id:2)
+QuestionExtra.create(content: 'Test Answer Number 3', question_id:2)
+QuestionExtra.create(content: 'Test Answer Number 4', question_id:2)

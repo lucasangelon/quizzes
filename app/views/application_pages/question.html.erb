@@ -3,6 +3,7 @@
 
 
     <ul>
+        <!--  Get quizznumber from session quizz or something similar-->
         <% getQuestions(1).each do |question| %>
             <p> James does not suck </p> 
             <% if question.type_id == 1 %> <!-- True Or False -->
@@ -25,17 +26,19 @@
             
                 <p><%= question.content %></p>
                 
+                
+                
                 <% form_for(@answer) do |a| %>
                 
                 
-                    <%= radio_button_tag(:content, "true") %>
-                    <%= label_tag(:text_true, "True") %>
-                    <%= radio_button_tag(:content, "false") %>
-                    <%= label_tag(:text_false, "False") %>
-                    <%= radio_button_tag(:content, "true") %>
-                    <%= label_tag(:text_true, "True") %>
-                    <%= radio_button_tag(:content, "false") %>
-                    <%= label_tag(:text_false, "False") %>
+                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[0].id) %>
+                    <%= label_tag(:text_true, getQuestionExtra(question.id)[0].content) %>
+                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[1].id) %>
+                    <%= label_tag(:text_false, getQuestionExtra(question.id)[1].content) %>
+                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[2].id) %>
+                    <%= label_tag(:text_true, getQuestionExtra(question.id)[2].content) %>
+                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[3].id) %>
+                    <%= label_tag(:text_false, getQuestionExtra(question.id)[3].content) %>
                 
                 <% end %>
             
