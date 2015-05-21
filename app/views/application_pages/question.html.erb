@@ -4,13 +4,14 @@
 
     <ul>
         <!--  Get quizznumber from session quizz or something similar-->
+        <% @userQuizAnswers%>
         <% getQuestions(1).each do |question| %>
-            <p> James does not suck </p> 
+        
             <% if question.type_id == 1 %> <!-- True Or False -->
                 
                 <p><%= question.content %></p>
                 
-                <% form_for(@answer) do |a| %>
+                <% form_for insertAnswer() |a| %>
                 
                 
                     <%= radio_button_tag(:content, "true") %>
@@ -19,8 +20,6 @@
                     <%= label_tag(:text_false, "False") %>
                 
                 <% end %>
-                
-                <br />
                 
             <% elsif question.type_id == 2 %> <!-- Radio Button (4 options, only 1 can be selected ) -->
             

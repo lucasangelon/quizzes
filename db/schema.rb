@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519072740) do
+ActiveRecord::Schema.define(version: 20150521062631) do
 
   create_table "cluster_units", force: true do |t|
     t.integer  "unit_id"
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(version: 20150519072740) do
   end
 
   create_table "questions", force: true do |t|
-    t.string   "heading"
+    t.string   "content"
+    t.integer  "quiz_id"
     t.integer  "user_id"
     t.integer  "type_id"
-    t.integer  "unit_id"
     t.integer  "language_id"
     t.integer  "specific_id"
     t.string   "correct_answer"

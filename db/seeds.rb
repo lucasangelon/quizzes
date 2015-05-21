@@ -11,7 +11,7 @@
 Role.create(name: 'Student')
 User.create(first_name: 'Lucas', last_name: 'Angelon', username: 'lucasa', password: 'test12', role_id: '1')
 Role.create(name: 'Lecturer')
-User.create((first_name: 'Lucas', last_name: 'Angelon', username: 'lucasa2', password: 'test12', role_id: '2'))
+User.create(first_name: 'Lucas', last_name: 'Angelon', username: 'lucasa2', password: 'test12', role_id: '2')
 
 
 Unit.create(name: 'ICAPRG502A Manage a project using software management tools')
