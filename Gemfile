@@ -31,6 +31,9 @@ gem 'spring',        group: :development
 # Using Foundation for responsive design.
 gem 'foundation-rails', '5.4.5'
 
+# Using mysql2 to for external database connecttion
+gem 'mysql2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

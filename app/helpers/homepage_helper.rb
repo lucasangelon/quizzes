@@ -35,4 +35,5 @@ module HomepageHelper
     
     return @units
   end
+  
 end

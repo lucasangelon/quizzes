@@ -55,6 +55,7 @@ GEM
     mime-types (2.5)
     minitest (5.6.1)
     multi_json (1.11.0)
+    mysql2 (0.3.18)
     rack (1.5.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -115,6 +116,7 @@ DEPENDENCIES
   foundation-rails (= 5.4.5)
   jbuilder (~> 2.0)
   jquery-rails
+  mysql2
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

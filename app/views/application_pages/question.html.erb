@@ -1,59 +1,17 @@
 <h1>ApplicationPages#question</h1>
 
 
+    
+    <!-- New Quiz, creates a new user_quiz--->
+    <% getQuestions.each do |question| %>
+    
+        <div class="question">
+            <%= question.id %>
+        </div>
+            
+    <% end %>
 
-    <ul>
-        <!--  Get quizznumber from session quizz or something similar-->
-        <% @userQuizAnswers%>
-        <% getQuestions(1).each do |question| %>
-        
-            <% if question.type_id == 1 %> <!-- True Or False -->
-                
-                <p><%= question.content %></p>
-                
-                <% form_for insertAnswer() |a| %>
-                
-                
-                    <%= radio_button_tag(:content, "true") %>
-                    <%= label_tag(:text_true, "True") %>
-                    <%= radio_button_tag(:content, "false") %>
-                    <%= label_tag(:text_false, "False") %>
-                
-                <% end %>
-                
-            <% elsif question.type_id == 2 %> <!-- Radio Button (4 options, only 1 can be selected ) -->
-            
-                <p><%= question.content %></p>
-                
-                
-                
-                <% form_for(@answer) do |a| %>
-                
-                
-                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[0].id) %>
-                    <%= label_tag(:text_true, getQuestionExtra(question.id)[0].content) %>
-                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[1].id) %>
-                    <%= label_tag(:text_false, getQuestionExtra(question.id)[1].content) %>
-                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[2].id) %>
-                    <%= label_tag(:text_true, getQuestionExtra(question.id)[2].content) %>
-                    <%= radio_button_tag(:content, getQuestionExtra(question.id)[3].id) %>
-                    <%= label_tag(:text_false, getQuestionExtra(question.id)[3].content) %>
-                
-                <% end %>
-            
-            <% elsif question.type_id == 3 %> <!-- Multile Answer (checkboxs) -->
-                
-                
-            
-            <% elsif question.type_id == 4 %> <!-- text answer -->
-            
-            <% elsif question.type_id == 5 %> <!-- Multiple text Answer -->
-            
-            <% end %>
-            <!-- Rest of if statements here -->
-            
-            
-            <br />
-        <% end %>
-    </ul>
+    
+    
+    
 <p>Find me in app/views/application_pages/question.html.erb</p>

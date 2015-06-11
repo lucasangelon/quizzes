@@ -1,3 +1,5 @@
 class Cluster < ActiveRecord::Base
-    has_and_belongs_to_many :units
+    self.table_name = 'cluster'
+
+
 end
