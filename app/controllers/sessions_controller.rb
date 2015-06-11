@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
     
     # Skipping the log in requirement 
     skip_before_filter :logged_in_user
+    include SessionsHelper
+    
+    
     
     def new
         

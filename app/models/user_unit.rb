@@ -1,4 +1,5 @@
 class UserUnit < ActiveRecord::Base
-    belongs_to :user
-    belongs_to:unit
+    self.table_name = 'user_unit'
+
+
 end

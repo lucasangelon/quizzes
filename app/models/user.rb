@@ -1,3 +1,5 @@
 class User < ActiveRecord::Base
-    belongs_to:role
+    self.table_name = 'user'
+
+
 end

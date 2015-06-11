@@ -1,4 +1,5 @@
 class CourseCluster < ActiveRecord::Base
-    belongs_to:cluster
-    belongs_to:course
+    self.table_name = 'course_cluster'
+
+
 end

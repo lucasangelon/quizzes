@@ -1,4 +1,5 @@
 class CourseUser < ActiveRecord::Base
-    belongs_to:user
-    belongs_to:course
+    self.table_name = 'course_user'
+
+
 end

@@ -1,4 +1,5 @@
 class UserQuiz < ActiveRecord::Base
-    belongs_to:quiz
-    belongs_to:user
+    self.table_name = 'user_quiz'
+
+
 end

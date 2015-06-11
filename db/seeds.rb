@@ -23,12 +23,12 @@
 #ClusterUnit.create(unit_id: 3, cluster_id: 2)
 
 #Course.create(name: 'Diploma of Software Development')
-Course.create(name: 'Certificate IV in Programming')
+#Course.create(name: 'Certificate IV in Programming')
 
 #CourseCluster.create(cluster_id: 1, course_id: 1)
 #CourseCluster.create(cluster_id: 2, course_id: 1)
-CourseCluster.create(cluster_id: 2, course_id: 2)
+#CourseCluster.create(cluster_id: 2, course_id: 2)
 
 #CourseUser.create(user_id: 1, course_id: 1)
-CourseUser.create(user_id: 1, course_id: 2)
+#CourseUser.create(user_id: 1, course_id: 2)
 
