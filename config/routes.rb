@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   #get     'details'   => 'users#edit'
   get     'new_user'  => 'users#new'
   
+  get     'new_quiz'  =>  'sessions#create_user_quiz'
+  
+  
   resources :users
   
   

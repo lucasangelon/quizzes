@@ -27,14 +27,22 @@ class SessionsController < ApplicationController
         end
     end 
     
+    def create_user_quiz(quizId)
+        userQuiz = UserQuiz.new(params[:])
+    
+        respond_to do |wants|
+            if userQuiz.save
+                flash[:notice] = 'Starting New Quiz'
+                redirect_to question_path
+            else
+
+            end
+        end
+    end
+    
     def destroy
         log_out
         redirect_to root_url
     end
     
-    def create_user_quiz
-        
-        
-                
-    end
 end

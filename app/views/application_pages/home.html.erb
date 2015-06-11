@@ -28,7 +28,7 @@
                                                         <ul>
                                                             <% getQuiz(u.id).each do |qu| %>
                                                             <li><%= qu.title %></li>
-                                                            <li><%= link to quest quiz_id => >
+                                                            <li><%= link_to "Question", {:controller => "UserQuizController", :action }%></li>
                                                             <% end %>
                                                         </ul>
                                                     </li>

@@ -21,4 +21,13 @@ module SessionsHelper
         @current_user = nil
     end
     
+    # Sets the current users quiz id
+    def set_ses_uquizId(user_quiz)
+        session[:user_quiz_id] = user_quiz.id
+    end
+    
+    # Destroys the current userquid 
+    def finish_quiz
+        session.delete()
+    end
 end
