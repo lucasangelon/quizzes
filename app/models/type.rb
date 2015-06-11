@@ -1,5 +1,5 @@
 class Type < ActiveRecord::Base
-    self.table_name = 'type'
+    #self.table_name = 'types'
 
 
 end

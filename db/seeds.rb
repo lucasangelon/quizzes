@@ -35,7 +35,11 @@ CourseCluster.create(cluster_id: 2, course_id: 2)
 CourseUser.create(user_id: 1, course_id: 1)
 CourseUser.create(user_id: 1, course_id: 2)
 
-Quiz.create(title: 'TEST 1', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:1,language_id:1,specific_id:1)
+Quiz.create(title: 'BLAHSHAGKJDFKJHFKJHFHKJFHKJHKJFLHKJFHKJFFHKJFHKJFFHKJFFHKJ', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:1,language_id:1,specific_id:1)
+Quiz.create(title: 'BLAHSHAGKJDFKJHFKJHFHKJFHKJHKJFLHKJFHKJFFHKJFHKJFFHKJFFHKJ', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:1,language_id:1,specific_id:1)
+Quiz.create(title: 'BLAHSHAGKJDFKJHFKJHFHKJFHKJHKJFLHKJFHKJFFHKJFHKJFFHKJFFHKJ', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:2,language_id:1,specific_id:1)
+Quiz.create(title: 'BLAHSHAGKJDFKJHFKJHFHKJFHKJHKJFLHKJFHKJFFHKJFHKJFFHKJFFHKJ', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:2,language_id:1,specific_id:1)
+Quiz.create(title: 'BLAHSHAGKJDFKJHFKJHFHKJFHKJHKJFLHKJFHKJFFHKJFHKJFFHKJFFHKJ', due_date: DateTime.parse('20150822235959'),user_id:2,unit_id:3,language_id:1,specific_id:1)
 Question.create(content:'This is a test True or false question', quiz_id:1,user_id:1,type_id:1,language_id:1,specific_id:1,correct_answer:'true')
 Question.create(content:'This is a "ABCD" question quiz',quiz_id:1,user_id:1,type_id:1,language_id:1,specific_id:1,correct_answer:'1')
 

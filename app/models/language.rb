@@ -1,5 +1,5 @@
 class Language < ActiveRecord::Base
-    self.table_name = 'language'
+    #self.table_name = 'languages'
 
 
 end

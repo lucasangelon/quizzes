@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-    self.table_name = 'question'
+    #self.table_name = 'questions'
 
 
 end

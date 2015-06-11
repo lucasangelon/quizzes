@@ -1,5 +1,6 @@
 class QuestionController < ApplicationController
     
-    incl
+    include QuestionHelper
+    
     
 end

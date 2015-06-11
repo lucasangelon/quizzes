@@ -1,5 +1,5 @@
 class Role < ActiveRecord::Base
-    self.table_name = 'role'
+    #self.table_name = 'roles'
 
 
 end

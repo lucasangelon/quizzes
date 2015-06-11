@@ -24,6 +24,15 @@
                                             <ul>
                                                 <% getUnits(cl.id).each do |u| %>
                                                     <li><%= u.name %></li>
+                                                    <li>
+                                                        <ul>
+                                                            <% getQuiz(u.id).each do |qu| %>
+                                                            <li><%= qu.title %></li>
+                                                            <li><%= link to quest quiz_id => >
+                                                            <% end %>
+                                                        </ul>
+                                                    </li>
+                                                    
                                                 <% end %>
                                             </ul>
                                         <% end %>

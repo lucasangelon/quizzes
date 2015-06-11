@@ -31,4 +31,10 @@ class SessionsController < ApplicationController
         log_out
         redirect_to root_url
     end
+    
+    def create_user_quiz
+        
+        
+                
+    end
 end
