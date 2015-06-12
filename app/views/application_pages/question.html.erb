@@ -3,7 +3,7 @@
 
     
     <!-- New Quiz, creates a new user_quiz--->
-    <% getQuestions.each do |question| %>
+    <% getQuestions(session[quiz_id]).each do |question| %>
     
         <div class="question">
             <%= question.id %>

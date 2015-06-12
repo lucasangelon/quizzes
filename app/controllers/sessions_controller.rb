@@ -27,17 +27,21 @@ class SessionsController < ApplicationController
         end
     end 
     
-    def create_user_quiz(quizId)
-        userQuiz = UserQuiz.new(params[:])
+    def create_user_quiz
+        
+        #inserts new user quiz
+        userQuiz = UserQuiz.create quiz_id: session[:quizId], user_id: session[:user_id]
+        
+        #add user_quiz id to session
+        make_quiz(userQuiz)
     
-        respond_to do |wants|
-            if userQuiz.save
-                flash[:notice] = 'Starting New Quiz'
-                redirect_to question_path
-            else
-
-            end
+        if userQuiz.save
+            flash[:notice] = 'Starting New Quiz'
+            redirect_to question_path
+        else
+            flash[:notice] = 'FAILED TO CREATE QUIZ'
         end
+        
     end
     
     def destroy
