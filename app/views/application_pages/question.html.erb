@@ -3,17 +3,14 @@
 
     <h4 class="quizzes-orange"><h4>
     
-    <!-- New Quiz, creates a new user_quiz---> <!-- session[quiz_id] --->
-    <% getQuestions(1).each do |question| %>
-    
-        <div>
+    <!-- Need to get quiz from Home -->
+    <%= form_for getUserQuizAnswers(1,session[:user_id]).each do |uqa| %>
+        
+            <% question = Question.where(question_id: uqa.question_id) %>
+        
             <% if question.type_id == 1 %> <!-- Mutliple Choice-->
-                <h5 class="quizzes-orange"><%=  question.content%></h5>
+                <h5 class="quizzes-orange"><%=  question.content %></h5>
                 
-                <%= form_for (@user_quiz_answer) do |uqa| %>
-                
-                    <!-- Question extras -->
-                    
                     <% getQuestionExtra(question.id).each do |qe|%>
                         <div class="row">
                             <div class="small-3 medium-2 medium-offset-2 columns">
@@ -22,16 +19,7 @@
                             </div>
                         </div>
                     <% end %>
-                
-                
-                    <div class="row">
-                        <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">    
-                            <%= uqa.submit  "Answer", class: 'button radius quizzes-orange back-black' %>
-                        </div>
-                    </div>    
                     
-                <% end %>
-                
             <% end %>
             
             
@@ -39,8 +27,6 @@
             <% if question.type_id == 2 %> <!--  Text Field -->
                 
                 <h5 class="quizzes-orange align-center"><%= question.content %></h5>
-                
-                <%= form_for @user_quiz_answer do |uqa| %>
                 
                 <div class="row">
                     <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
@@ -54,41 +40,25 @@
                         <%= uqa.submit  "Answer", class: 'button radius quizzes-orange back-black'%>
                     </div>
                 </div>
-                <% end %>
-                
             <% end %>
+            
             
             <% if question.type_id == 3 %> <!-- True or false -->
             
                 <h5 class="quizzes-orange"><%= question.content %></h5>
                 <p> TRUE OR FALSE</p>
                 
-                <%= form_for @user_quiz_answer do |uqa| %>
-                
-                    <!-- -->
-                    <div class="row">
-                        <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
-                            <%= label_tag(:answer_text, "True") %>
-                            <%= uqa.radio_button :answer_text, "true"%>
-                            <%= label_tag(:answer_text, "False") %>
-                            <%= uqa.radio_button :answer_text, "false"%>
-                        </div>
-                    </div> 
-                
-                    <div class="row">
-                        <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
-                            <%= uqa.submit  "Answer", class: 'button radius quizzes-orange back-black' %>
-                        </div>
+                <div class="row">
+                    <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
+                        <%= uqa.submit  "Answer", class: 'button radius quizzes-orange back-black' %>
                     </div>
+                </div>
                     
-                <% end %>
-            
             <% end %>
             
             
-            
-        </div>
-            
+        
+        
     <% end %>
 
     

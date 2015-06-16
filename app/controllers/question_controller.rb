@@ -30,9 +30,5 @@ class QuestionController < ApplicationController
         @user_quiz_answer = UserQuizAnswer.all
     end
 
-
-     def question_params
-      params.require(:quiz).permit(:id, :name)
-     end
     
 end
