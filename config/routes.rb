@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get     'question'  => 'application_pages#question'
   get     'review'    => 'application_pages#review'
   
+  
+  
   get     'login'     => 'sessions#new'
   post    'login'     => 'sessions#create'
   delete  'logout'    => 'sessions#destroy'
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   
   
   resources :users
+  resources :user_quiz_answers
   
   
   # The priority is based upon order of creation: first created -> highest priority.

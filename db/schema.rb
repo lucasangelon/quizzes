@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604053715) do
+ActiveRecord::Schema.define(version: 20150616023356) do
 
   create_table "cluster_units", force: true do |t|
     t.integer  "unit_id"
