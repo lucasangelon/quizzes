@@ -2,16 +2,15 @@
 
 
     <h4 class="quizzes-orange"><h4>
-    
-    <!-- Need to get quiz from Home -->
-    <%= form_for getUserQuizAnswers(1,session[:user_id]).each do |uqa| %>
         
-            <% question = Question.where(question_id: uqa.question_id) %>
-        
-            <% if question.type_id == 1 %> <!-- Mutliple Choice-->
-                <h5 class="quizzes-orange"><%=  question.content %></h5>
+    <%= form_for(@gustavo) do |f| %>
+        <% getQuestions(@pornhub.to_i).each do |q| %>
+            <p><%= q.content %></p>
+            
+            <% if q.type_id == 1 %> <!-- Mutliple Choice-->
+                <h5 class="quizzes-orange"><%=  q.content %></h5>
                 
-                    <% getQuestionExtra(question.id).each do |qe|%>
+                    <% getqExtra(q.id).each do |qe|%>
                         <div class="row">
                             <div class="small-3 medium-2 medium-offset-2 columns">
                                 <%= uqa.label qe.content %>
@@ -24,9 +23,9 @@
             
             
             
-            <% if question.type_id == 2 %> <!--  Text Field -->
+            <% if q.type_id == 2 %> <!--  Text Field -->
                 
-                <h5 class="quizzes-orange align-center"><%= question.content %></h5>
+                <h5 class="quizzes-orange align-center"><%= q.content %></h5>
                 
                 <div class="row">
                     <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
@@ -35,33 +34,23 @@
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
-                        <%= uqa.submit  "Answer", class: 'button radius quizzes-orange back-black'%>
-                    </div>
-                </div>
             <% end %>
             
             
-            <% if question.type_id == 3 %> <!-- True or false -->
+            <% if q.type_id == 3 %> <!-- True or false -->
             
-                <h5 class="quizzes-orange"><%= question.content %></h5>
+                <h5 class="quizzes-orange"><%= q.content %></h5>
                 <p> TRUE OR FALSE</p>
                 
                 <div class="row">
                     <div class="small-2 small-offset-5 medium-1 medium-offset-5 columns end">
-                        <%= uqa.submit  "Answer", class: 'button radius quizzes-orange back-black' %>
                     </div>
                 </div>
                     
             <% end %>
-            
-            
+        <% end %>
         
-        
+        <%= f.submit "Gustavo is a twat" %>
     <% end %>
 
-    
-    
-    
 <p>Find me in app/views/application_pages/question.html.erb</p>

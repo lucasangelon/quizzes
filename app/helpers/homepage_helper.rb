@@ -48,4 +48,10 @@ module HomepageHelper
     
   end
   
+  def getQuestions(quizId)
+    @questionArray = []
+    @questionArray = Question.where(quiz_id: @pornhub.to_i)
+    return @questionArray
+  end
+  
 end

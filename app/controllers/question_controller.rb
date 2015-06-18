@@ -2,6 +2,7 @@ class QuestionController < ApplicationController
     
     include QuestionHelper
     include UserQuizAnswerController
+    
     def question
         @user_quiz_answer = {(1), (1), (1), (1), ("Anything")}
     end
@@ -15,9 +16,6 @@ class QuestionController < ApplicationController
         
         if @user_quiz_answer.save
           flash[:success] = "Welcome to Quizzes!"
-          redirect_to home_path
-        else
-          render 'new'
         end
     end
     

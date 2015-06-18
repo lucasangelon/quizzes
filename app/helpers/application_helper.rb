@@ -1,14 +1,9 @@
 module ApplicationHelper
     
-    def getUserQuizAnswers(quizId,userId)
-        @ans_array = []
-        uq = UserQuizzes.create(user_id: userId, quiz_id: quizId)
-        Question.where(quiz_id: quizId).find_each do |q|
-            uqa = UserQuizAnswers.create(user_quiz_id: uq.id, question_id: q.id)
-            @ans_array.push(uqa)
-        end
-    
-        return @ans_array
-    end
+    #Get User Quiz Answers
+    #Returns array of userquizanswers 
+    #Inserts new UQ into db
+    #Cretes ne UQA and adds to array
+    #Returns array u.q.a to be edited in questions 
     
 end

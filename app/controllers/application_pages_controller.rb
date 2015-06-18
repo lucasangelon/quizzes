@@ -1,22 +1,28 @@
 class ApplicationPagesController < ApplicationController
   include HomepageHelper
   include QuestionHelper
-  #include UserQuizAnswerController
+  include ApplicationPagesHelper
   
   helper_method :getCourses
   helper_method :getClusters
   helper_method :getUnits
+  helper_method :getQuestions
+  
   
   # Homepage section
   def home
   end
 
   def quizzes
+    @quiz
   end
 
   def question
+    @pornhub = params[:quiz]
+    @gustavo = UserQuiz.create(user_id: session[:user_id], quiz_id: @pornhub.to_i)
+
     #user_quiz_answer_params = ["user_id" => 1, "user_quiz_id" =>1, "question_id" =>1, "question_extra_id" => 1, "answer_text" =>"anything"]
-    @user_quiz_answer = UserQuizAnswer.new(user_quiz_id:1,question_id:1,question_extra_id:1,answer_text:'test')
+    #@user_quiz_answer = UserQuizAnswer.new(user_quiz_id:1,question_id:1,question_extra_id:1,answer_text:'test')
   end
   
   def new
@@ -51,4 +57,6 @@ class ApplicationPagesController < ApplicationController
 
   def review
   end
+  
+  
 end
